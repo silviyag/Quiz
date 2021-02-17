@@ -23,14 +23,12 @@ A list of technologies used within the project:
 ## Installation
 ***
 A little intro about the installation. 
-```
-$ git clone 
 
 ## Collaboration
 ***
 
 > This project was an internship provided by the Darmstadt University of Applied Sciences.
-> > Advice on how to proceed in this project was received from the Damrstadt University of Applied Sciences
+> Advice on how to proceed in this project was received from the Damrstadt University of Applied Sciences
 
 ## FAQs
 ...
