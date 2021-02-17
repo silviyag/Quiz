@@ -19,21 +19,23 @@ Can test areas of knowledge (categories).
   <summary>User Story</summary><br/>
 
 1. The program is executed. A menu will appear with the following options
-displayed: load a csv file, start the game, perform an analysis.
+displayed: load a csv file, start the game, perform an analysis. :white_check_mark:
 ![Starting the game](./menu.PNG)
 
 1.1 If the player wants to load a new file, the csv file is read and a message issued whether the file was successfully read. If the file succeeds
 a database connection will take place. If the database connection could not be established, an error message is displayed. If the
-The database connection has been successfully carried out, the databases are updated and the main menu with the three options is displayed.
+The database connection has been successfully carried out, the databases are updated and the main menu with the three options is displayed. :white_check_mark:
 
 
-1.2 If the player wants to start the game directly, the game is started. 
+1.2 If the player wants to start the game directly, the game is started. :white_check_mark:
 
 
-1.2.1 The player is asked to enter his name and an ID number. Then the Players are asked to select at least two categories and number of questions. After input from the player generates questions. Each question has four possible answers. The player is asked to enter the number of an answer. There will be a message displayed whether the answer was correct or incorrect. After the last question, the main menu appears issued with the three options.
+1.2.1 The player is asked to enter his name and an ID number. Then the Players are asked to select at least two categories and number of questions. After input from the player generates questions. Each question has four possible answers. The player is asked to enter the number of an answer. There will be a message displayed whether the answer was correct or incorrect. After the last question, the main menu appears issued with the three options. :white_check_mark:
+
+
 ![Starting the game](./game.PNG)
 
-1.3 If the player wants to carry out an analysis, an analysis is carried out. (not completely implemented)
+1.3 If the player wants to carry out an analysis, an analysis is carried out. (not completely implemented):red_circle:
 
 1.3.1 After entering “y” you will be asked for two IDs and the analysis will start. The ID of the player who has more correct answers is output. The game will
 completed.
