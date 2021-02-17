@@ -17,7 +17,11 @@ Can test areas of knowledge (categories).
 ## Technologies
 ***
 A list of technologies used within the project:
-* [Technologie name](https://example.com): 
+* [JPA](https://www.logicbig.com/tutorials/java-ee-tutorial/jpa/jpa-primary-key.html) (https://docs.oracle.com/javaee/7/api/javax/persistence/AttributeConverter.html)
+* [Hibernate] (https://hibernate.org/community/contribute/eclipse-ide/)(https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-gradle-example/)
+*  [Eclipse](https://wiki.eclipse.org/EGit/User_Guide#Committing_Changes)
+* [MySql](https://www.gitkraken.com/)
+*  [GitKraken](https://www.gitkraken.com/)
 
 
 ## Installation
