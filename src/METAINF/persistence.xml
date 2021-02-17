@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="WissenstestPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <!-- put your entity-classes here -->
+    <class>wissenstest.Player</class>
+    <class>wissenstest.Match</class>
+    <class>wissenstest.Category</class>
+    <class>wissenstest.Question</class>
+    <class>wissenstest.Answer</class>
+    <class>wissenstest.InstantConverter</class>
+    <class>wissenstest.LocalDateTimeConverter</class>
+    <!-- this must be provided -->
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@141.100.70.40:1521:orcl"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <!-- 
+      other driver
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      -->
+      <!--<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
+      <property name="javax.persistence.jdbc.user" value="studa2x2"/>
+      <property name="javax.persistence.jdbc.password" value="studa"/>
+      <property name="eclipselink.logging.level" value="FINE"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="eclipselink.logging.level" value="WARNING"/>
+      <property name="eclipselink.logging.exceptions" value="false"/>
+      <property name="eclipselink.logging.level.sql" value="FINE"/>
+      <property name="eclipselink.logging.parameters" value="true"/>
+      <property name="eclipselink.logging.timestamp" value="false"/>
+      <property name="eclipselink.logging.session" value="false"/>
+    </properties>
+  </persistence-unit>
+</persistence>
