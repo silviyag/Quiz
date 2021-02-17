@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [General Info](#general-info)<br/>
- 1.1 [User Story](#subparagraph1)
+ - [User Story](#user-story)
 3. [Technologies](#technologies)
 4. [Installation](#installation)
 5. [Collaboration](#collaboration)
@@ -35,7 +35,7 @@ The database connection has been successfully carried out, the databases are upd
 
 ![Starting the game](./game.PNG)
 
-1.3 If the player wants to carry out an analysis, an analysis is carried out. (not completely implemented):red_circle:
+1.3 If the player wants to carry out an analysis, an analysis is carried out. (incomplete) :red_circle:
 
 1.3.1 After entering “y” you will be asked for two IDs and the analysis will start. The ID of the player who has more correct answers is output. The game will
 completed.
@@ -43,7 +43,7 @@ completed.
 1.3.2 After entering “n” the game ends.
   </details>
 
-### Class diagram ⚠️ :warning:
+### Class diagram ⚠️ :warning: (incomplete)
 ![Class diagram](./klassenDiagrammUnvollstaendig.PNG)
 
 ## Technologies
