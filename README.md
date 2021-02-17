@@ -18,7 +18,7 @@ Can test areas of knowledge (categories).
 <details open>
   <summary>User Story</summary>
 
-  1. The program is executed. A menu will appear with the following options
+1. The program is executed. A menu will appear with the following options
 displayed: load a csv file, start the game, perform an analysis.
 
 1.1 If the player wants to load a new file, the csv file is read and a message issued whether the file was successfully read. If the file succeeds
@@ -40,7 +40,7 @@ completed.
   </details>
 
 ### Screenshot
-![Class diagram](file:///C:/Users/Win10 Pro x64/Desktop/klassenDiagrammUnvollstaendig.PNG)
+![Class diagram](./klassenDiagrammUnvollstaendig.PNG)
 
 ## Technologies
 ***
@@ -51,7 +51,7 @@ A list of technologies used within the project:
 * [Hibernate Gradle Example](https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-gradle-example/)
 * [Eclipse](https://wiki.eclipse.org/EGit/User_Guide#Committing_Changes)
 * [MySql](https://www.java-success.com/13-%e2%99%a6-getting-started-mysql-beginner-tutorial/)
-*  [GitKraken](https://www.gitkraken.com/)
+* [GitKraken](https://www.gitkraken.com/)
 
 
 ## Installation
