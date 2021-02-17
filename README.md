@@ -2,15 +2,48 @@
 
 ## Table of Contents
 1. [General Info](#general-info)
-2. [Technologies](#technologies)
-3. [Installation](#installation)
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
+ 1.1 [User Story](#subparagraph1)
+3. [Technologies](#technologies)
+4. [Installation](#installation)
+5. [Collaboration](#collaboration)
+6. [FAQs](#faqs)
 
 ### General Info
 ***
 The aim of the project is to develop a game with which you can use your knowledge in various
 Can test areas of knowledge (categories).
+
+### User Story
+***
+<details open>
+  <summary>User Story</summary>
+    [ERROR] Self-reference
+  1. The program is executed. A menu will appear with the following options
+displayed: load a csv file, start the game, perform an analysis.
+
+1 .1 If the player wants to load a new file, the csv file is read and a
+
+Message issued whether the file was successfully read. If the file succeeds
+a database connection will take place. If it's the
+If the database connection could not be established, an error message is displayed. If the
+The database connection has been successfully carried out, the databases are updated
+and the main menu with the three options is displayed.
+1.2 If the player wants to start the game directly, the game is started.
+1.2.1 The player is asked to enter his name and an ID number. Then the
+Players are asked to select at least two categories and number of questions. After
+Input from the player generates questions. Each question has four possible answers. Of the
+The player is asked to enter the number of an answer. There will be a message
+displayed whether the answer was correct or incorrect. After the last question, the main menu appears
+issued with the three options.
+
+1.3 If the player wants to carry out an analysis, an analysis is carried out.
+
+1.3.1 After entering “y” you will be asked for two IDs and the analysis will start. The ID of the player who has more correct answers is output. The game will
+completed.
+
+1.3.2 After entering “n” the game ends.
+  </details>
+
 ### Screenshot
 ![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
 
