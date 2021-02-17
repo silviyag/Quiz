@@ -64,6 +64,7 @@ A little intro about the installation.
 
 The repository does not contain a complete project.
 Content of the repository:
+- persistence.xml file
 - java classes
 - readme file
 - csv file with sample questions and answers
