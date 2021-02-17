@@ -43,7 +43,7 @@ completed.
 1.3.2 After entering “n” the game ends.
   </details>
 
-### Screenshot ⚠️ :warning:
+### Class diagram ⚠️ :warning:
 ![Class diagram](./klassenDiagrammUnvollstaendig.PNG)
 
 ## Technologies
