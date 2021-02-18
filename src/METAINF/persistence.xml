@@ -14,13 +14,8 @@
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@141.100.70.40:1521:orcl"/>
       <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-      <!-- 
-      other driver
-      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      -->
-      <!--<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
-      <property name="javax.persistence.jdbc.user" value="studa2x2"/>
-      <property name="javax.persistence.jdbc.password" value="studa"/>
+      <property name="javax.persistence.jdbc.user" value=""/>
+      <property name="javax.persistence.jdbc.password" value=""/>
       <property name="eclipselink.logging.level" value="FINE"/>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
       <property name="eclipselink.logging.level" value="WARNING"/>

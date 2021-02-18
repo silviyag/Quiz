@@ -13,7 +13,7 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int player_id;
+    private int playerId;
     private String playerName;
     @OneToOne(mappedBy = "player")
     private Match currentMatch;
@@ -26,13 +26,13 @@ public class Player {
     }
 
     @Getter
-    public int getPlayer_id() {
-        return player_id;
+    public int getPlayerId() {
+        return playerId;
     }
 
     @Setter
-    public void setPlayer_id(int id) {
-        player_id = id;
+    public void setPlayerId(int id) {
+        playerId = id;
     }
 
     @Getter
@@ -41,8 +41,8 @@ public class Player {
     }
 
     @Setter
-    public void setPlayerName(String Name) {
-        playerName = Name;
+    public void setPlayerName(String name) {
+        playerName = name;
     }
 
     @Getter
@@ -51,8 +51,8 @@ public class Player {
     }
 
     @Setter
-    public void setCurrentMatch(Match Match) {
-        currentMatch = Match;
+    public void setCurrentMatch(Match match) {
+        currentMatch = match;
     }
 
     @Getter
@@ -61,8 +61,8 @@ public class Player {
     }
 
     @Setter
-    public void setMatchesPlayed(int Matches) {
-        matchesPlayed = Matches;
+    public void setMatchesPlayed(int matches) {
+        matchesPlayed = matches;
     }
 
     @Getter
@@ -71,8 +71,8 @@ public class Player {
     }
 
     @Setter
-    public void setScore(int Score) {
-        score = Score;
+    public void setScore(int score) {
+        this.score = score;
     }
 
 }

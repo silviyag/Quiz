@@ -68,7 +68,7 @@ public class UI {
         if (startmatch == true) {//@toDo localize text
             System.out.println("Geben Sie bitte eine ID ein!");
             int id = select.nextInt();
-            player.setPlayer_id(id);
+            player.setPlayerId(id);
 
             System.out.println("Geben Sie bitte Ihr Name ein!");
             String name = select.next();
@@ -94,16 +94,16 @@ public class UI {
         return database;
     }
 
-    public void setDatabase(Database Database) {
-        database = Database;
+    public void setDatabase(Database database) {
+        this.database = database;
     }
 
     public Player getPlayer() {
         return player;
     }
 
-    public void setPlayer(Player Player) {
-        player = Player;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     public void readCsv() {
@@ -186,7 +186,7 @@ public class UI {
                 }
             }
         }
-        String playerIdData = String.valueOf(getPlayer().getPlayer_id());
+        String playerIdData = String.valueOf(getPlayer().getPlayerId());
         indexOfAnswers.add(String.valueOf(index) + " " + playerIdData);
         analyse.setIndexOfAnswers(indexOfAnswers);
         //new Analyse(index, player.getPlayer_id());

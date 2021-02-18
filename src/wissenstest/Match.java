@@ -20,7 +20,7 @@ public class Match{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int match_id;
+    private int matchId;
     @OneToOne
     private Player player;
     @OneToMany(mappedBy = "match")
@@ -38,11 +38,11 @@ public class Match{
 
     @Getter
     public int getMatch_id(){
-        return match_id;
+        return matchId;
     }
     @Setter
-    public void setMatch_Id(int Match_id){
-        match_id = Match_id;
+    public void setMatch_Id(int matchId){
+        this.matchId = matchId;
     }
 
     @Getter
@@ -50,30 +50,31 @@ public class Match{
         return player;
     }
     @Setter
-    public void setPlayer(Player Player){
-        player = Player;
+    public void setPlayer(Player player){
+        this.player = player;
     }
     
     @Getter
     public List<Category> getCategories(){
         return categories;
     }
+    
     @Setter
-    public void setCategories(List<Category> Categories){
-        categories = Categories;
+    public void setCategories(List<Category> categories){
+        this.categories = categories;
     }
     
-    public void addCatgory(Category Category){
-        categories.add(Category);
+    public void addCatgory(Category category){
+        categories.add(category);
     }
     
-    public void deleteCategoryOnPosition(int position){
+    public void deleteCategoryByPosition(int position){
         categories.remove(position);
     }
     
-    public void deleteCategoryWithID(int ID){
+    public void deleteCategoryById(int categoryId){
         for(int i = 0; i < categories.size(); i++){
-            if(categories.get(i).getCategory_id() == ID){
+            if(categories.get(i).getCategoryId() == categoryId){
                 categories.remove(i);
                 break;
             }
@@ -84,17 +85,19 @@ public class Match{
     public Date getStartDate(){
         return startDate;
     }
+    
     @Setter
-    public void setStartDate(Date StartDate){
-        startDate = StartDate;
+    public void setStartDate(Date startDate){
+        this.startDate = startDate;
     }
 	
     @Getter
     public Date getEndDate(){
         return endDate;
     }
+    
     @Setter
-    public void setEndDate(Date EndDate){
-        endDate = EndDate;
+    public void setEndDate(Date endDate){
+        this.endDate = endDate;
     }    
 }

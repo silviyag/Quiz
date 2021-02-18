@@ -2,11 +2,6 @@ package wissenstest;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import static java.util.Objects.hash;
-import java.util.Random;
-import java.util.Scanner;
 import java.util.Vector;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,68 +17,67 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int category_id;
-    private int categoryNumber;
+    private int categoryId;
+    private int categoryNumber; 
     @ManyToOne
     private Match match;
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category")//bidirectional association. category is owner of this relationship
     private List<Question> questions;
     private String categoryTitle;
     private boolean selected;
 
     public Category() {
-
+           //default
     }
 
-    public Category(String CategoryTitle) {
-        //toDo: Switch case je nach CategoryTitle machen um category_id zu setzen
-        questions = new ArrayList<Question>();
-        categoryTitle = CategoryTitle;
-        selected = false;
+    public Category(String categoryTitle) {
+        this.questions = new ArrayList<Question>();
+        this.categoryTitle = categoryTitle;
+        this.selected = false;
     }
 
     @Getter
-    public int getCategory_id() {
-        return category_id;
+    public int getCategoryId() {
+        return this.categoryId;
     }
 
     @Setter
-    public void setCategory_id(int Category_id) {
-        category_id = Category_id;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     @Getter
     public Match getMatch() {
-        return match;
+        return this.match;
     }
 
     @Setter
-    public void setMatch(Match Match) {
-        match = Match;
+    public void setMatch(Match match) {
+        this.match = match;
     }
 
     @Getter
     public List<Question> getQuestions() {
-        return questions;
+        return this.questions;
     }
 
     @Setter
-    public void setQuestions(Vector<Question> Questions) {
-        questions = Questions;
+    public void setQuestions(Vector<Question> questions) {
+        this.questions = questions;
     }
 
-    public void addQuestion(Question Question) {
-        questions.add(Question);
+    public void addQuestion(Question question) {
+        this.questions.add(question);
     }
 
-    public void deleteQuestionOnPosition(int position) {
-        questions.remove(position);
+    public void deleteQuestionByPosition(int position) {
+        this.questions.remove(position);
     }
 
-    public void deleteQuestionWithID(int ID) {
-        for (int i = 0; i < questions.size(); i++) {
-            if (questions.get(i).getQuestion_id() == ID) {
-                questions.remove(i);
+    public void deleteQuestionById(int id) {
+        for (int i = 0; i < this.questions.size(); i++) {
+            if (this.questions.get(i).getQuestionId() == id) {
+            	this.questions.remove(i);
                 break;
             }
         }
@@ -91,25 +85,31 @@ public class Category {
 
     @Getter
     public String getCategoryTitle() {
-        return categoryTitle;
+        return this.categoryTitle;
     }
 
     @Setter
-    public void setCategoryTitle(String Title) {
-        categoryTitle = Title;
+    public void setCategoryTitle(String categoryTitle) {
+    	  this.categoryTitle = categoryTitle;
     }
 
     @Getter
-    public boolean isSelected() {    //0 = false, 1 = true
-        return selected;
+    public boolean isSelected() { 
+        return this.selected;
     }
 
     @Setter
-    public void setSelected(boolean Selected) {  //0 = false, 1 = true
-        selected = Selected;
+    public void setSelected(boolean selected) { 
+    	this.selected = selected;
     }
-
-    void setNumberOfCategories(int numberOfCategory) {
-        this.categoryNumber = numberOfCategory;
+    
+    @Getter
+    public int getNumberOfCategories() { 
+        return this.categoryNumber;
     }
+    
+    @Setter
+    void setNumberOfCategories(int numberOfCategory) { 
+        this.categoryNumber = numberOfCategory; 
+    } 
 }

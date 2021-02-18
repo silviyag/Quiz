@@ -53,16 +53,16 @@ public class Database {
         return emf;
     }
 
-    public void setEntityManagerFactory(EntityManagerFactory EntityManagerFactory) {
-        emf = EntityManagerFactory;
+    public void setEntityManagerFactory(EntityManagerFactory entityManagerFactory) {
+        emf = entityManagerFactory;
     }
 
     public EntityManager getEntityManager() {
         return em;
     }
 
-    public void setEntityManager(EntityManager EntityManager) {
-        em = EntityManager;
+    public void setEntityManager(EntityManager entityManager) {
+        em = entityManager;
     }
 
     //overwritten in order of prof

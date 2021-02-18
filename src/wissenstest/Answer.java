@@ -10,11 +10,11 @@ import jdk.nashorn.internal.objects.annotations.Getter;
 import jdk.nashorn.internal.objects.annotations.Setter;
 
 @Entity
-public class Answer{
+public class Answer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)// to configure the way of increment of the specified column(field). Get the next unique primary key for the entities
-    private int answer_id;
+    private int answerId;
     @ManyToOne
     private Question question;//many answer to one question
     private String answerText;
@@ -23,34 +23,35 @@ public class Answer{
     	  //default
     }
     
-    public Answer(String AnswerText){
-        answerText = AnswerText;
+    public Answer(String answerText){
+        this.answerText = answerText;
     }
     
     @Getter
-    public int getAnswer_id(){
-        return answer_id;
+    public int getAnswerId(){
+        return this.answerId;
     }
     @Setter
-    public void setAnswer_id(int id){
-        answer_id = id;
+    public void setAnswerId(int id){
+        this.answerId = id;
     }
     
     @Getter
     public Question getQuestion(){
-        return question;
+        return this.question;
     }
     @Setter
-    public void setQuestion(Question Question){
-        question = Question;
+    public void setQuestion(Question question){
+        this.question = question;
     }
     
     @Getter
     public String getAnswerText(){
         return answerText;
     }
+    
     @Setter
-    public void setAnswerText(String Text){
-        answerText = Text;
+    public void setAnswerText(String text){
+        answerText = text;
     }
 }

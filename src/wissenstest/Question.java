@@ -1,7 +1,6 @@
 package wissenstest;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,7 +13,7 @@ import jdk.nashorn.internal.objects.annotations.Setter;
 public class Question {
 
     @Id
-    private int question_id;
+    private int questionId;
     private int questionNumber;
     @ManyToOne
     private Category category;//many questions to one category
@@ -28,31 +27,31 @@ public class Question {
           //default
     }
 
-    public Question(int question_id, Category category, String QuestionText, Answer Answer1, Answer Answer2, Answer Answer3, Answer Answer4, int CorrectAnswer) {
-        this.question_id = question_id;
+    public Question(int question_id, Category category, String questionText, Answer answer1, Answer answer2, Answer answer3, Answer answer4, int correctAnswer) {
+        this.questionId = question_id;
         this.category = category;
-        questionText = QuestionText;
+        this.questionText = questionText;
         answers = new ArrayList<Answer>();
-        answers.add(Answer1);
-        answers.add(Answer2);
-        answers.add(Answer3);
-        answers.add(Answer4);
-        correctAnswer = CorrectAnswer;
+        answers.add(answer1);
+        answers.add(answer2);
+        answers.add(answer3);
+        answers.add(answer4);
+        this.correctAnswer = correctAnswer;
     }
 
     @Getter
-    public int getQuestion_id() {
-        return question_id;
+    public int getQuestionId() {
+        return questionId;
     }
 
     @Setter
-    public void setQuestion_id(int Question_id) {
-        question_id = Question_id;
+    public void setQuestion_id(int questionId) {
+        this.questionId = questionId;
     }
 
     @Getter
     public Category getCategory() {
-        return category;
+        return this.category;
     }
 
     @Setter
@@ -66,8 +65,8 @@ public class Question {
     }
 
     @Setter
-    public void setQuestionText(String Text) {
-        questionText = Text;
+    public void setQuestionText(String text) {
+        this.questionText = text;
     }
 
     @Getter
@@ -76,8 +75,8 @@ public class Question {
     }
 
     @Setter
-    public void setAnswers(List<Answer> Answers) {
-        answers = Answers;
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
     }
 
     @Getter
@@ -86,8 +85,8 @@ public class Question {
     }
 
     @Setter
-    public void setTippedAnswer(int TippedAnswer) {
-        tippedAnswer = TippedAnswer;    //Number of tipped Answer
+    public void setTippedAnswer(int tippedAnswer) {
+        this.tippedAnswer = tippedAnswer;    //Number of tipped Answer
     }
 
     @Getter
@@ -96,11 +95,16 @@ public class Question {
     }
 
     @Setter
-    public void setCorrectAnswer(int CorrectAnswer) {
-        correctAnswer = CorrectAnswer;    //Number of correct Answer
+    public void setCorrectAnswer(int correctAnswer) {
+        this.correctAnswer = correctAnswer;    //Number of correct Answer
     }
     @Setter
     void setNumberOfQuestions(int numberOfQuestions) {
         this.questionNumber = numberOfQuestions;
+    }
+    
+    @Getter
+    public int getNumberOfQuestions() {
+        return this.questionNumber;
     }
 }
