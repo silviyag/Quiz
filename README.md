@@ -58,7 +58,11 @@ A list of technologies used within the project:
 * [Eclipse](https://wiki.eclipse.org/EGit/User_Guide#Committing_Changes)
 * [MySql](https://www.java-success.com/13-%e2%99%a6-getting-started-mysql-beginner-tutorial/)
 * [GitKraken](https://www.gitkraken.com/)
-
+* [EclipseLink](https://www.eclipse.org/eclipselink/)
+* [Persistence Unit](https://www.objectdb.com/java/jpa/entity/persistence-unit)
+*  [JRE 1.8.2]
+*  [JDK 1.8.2]
+*  [Annotation Example](https://www.baeldung.com/jpa-joincolumn-vs-mappedby)
 
 ## Installation
 ***
