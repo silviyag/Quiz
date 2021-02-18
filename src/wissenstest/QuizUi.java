@@ -63,6 +63,7 @@ public class QuizUi {
     }
 
     public void startMatch(boolean startmatch) {
+    	
     select = new Scanner(System.in);
     
         if (startmatch == true) {//@toDo localize text
@@ -83,62 +84,56 @@ public class QuizUi {
             question.setNumberOfQuestions(numberOfQuestions);
 
             chooseCategory(numberOfCategory, numberOfQuestions);
-            //Analyse kann man in dem Menue als Option reinmachen
+            //Analyse kann in dem Menue als Option implementiert werden
             //analyseStart();
         } else {
             gameActive = false;
         }
     }
 
-    public Database getDataBase() {
-        return database;
-    }
-
-    public void setDatabase(Database database) {
-        this.database = database;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
     public void readCsv() {
         System.out.println("\n Reading CSV File...");
         List<Question> questions = CSVReader.readCSV();
         System.out.println("Done reading CSV File" + "\n" + "Connecting to database...");
-        try {
-            database = new Database();
-        } catch (Exception ex) {
-            System.err.println("Can not connect to Database.");
-        }
-        try {
-            if (database != null) {
-                for (int i = 0; i < questions.size(); i++) {
-                    database.registerObject(questions.get(i).getCategory());
-                    database.registerQuestionAndAnswer(questions.get(i), questions.get(i).getAnswers());
-                }
-            }
-        } catch (Exception ex) {
-            System.err.println("Database can not be updated.");
-        }
+        
+        connectDb(questions);
         System.out.println();
     }
 
-    void chooseCategory(int numberOfCategories, int numberOfQuestions) {
+    private void connectDb( List<Question> questions) {
+    	
+    	   try {
+    		   
+               database = new Database();
+           } catch (Exception ex) {
+               System.err.println("Can not connect to Database.");
+           }
+    	   
+           try {
+               if (database != null && !questions.isEmpty()) {
+                   for (int i = 0; i < questions.size(); i++) {
+                       database.registerObject(questions.get(i).getCategory());
+                       database.registerQuestionAndAnswer(questions.get(i), questions.get(i).getAnswers());
+                   }
+               }
+           } catch (Exception ex) {
+               System.err.println("Database can not be updated.");
+           }	
+	}
+
+	void chooseCategory(int numberOfCategories, int numberOfQuestions) {
+		
         int index = 0;
         String choose;
-        List<String> choosenCategory = new ArrayList<String>();
-        //zufaellige Zahl, um eine Kategorien auszuwaehlen
-        Random random = new Random();
+        List<String> choosenCategory = new ArrayList<String>();     
+        Random random = new Random();  //zufaellige Zahl, um eine Kategorien auszuwaehlen
+        
         while (index != numberOfCategories) {
             choose = csv.getAllCategories(random.nextInt(numberOfCategories + 1));//in den Klammern steht die Anzahl der Zahlen aus denen eine Zuf�llige ermittelt werden soll.
             choosenCategory.add(choose);
             index++;
         }
+        
         game(choosenCategory, numberOfQuestions);
         //Optional: analyse Ergebnisse ausgeben
     }
@@ -148,17 +143,20 @@ public class QuizUi {
         for (int i = 0; i < choosenCategory.size(); i++) {
             for (Map.Entry<Integer, String> entry : csv.getHmText().entrySet()) {
                 if (numberOfQuestions == 0) {
-                    break;
+                    break;//@toDo Warning ausgeben
                 }
+                
                 if (entry.getValue().equals(choosenCategory.get(i))) {
                     int key = entry.getKey();
                     for (int j = 0; j < csv.getQuesstion().size(); j++) {
+                    	
                         if (csv.getQuesstion().get(j).contains(String.valueOf(key))) {
                             System.out.println(csv.getQuesstion().get(j));
                             String answers = csv.getAnswers().get(j).substring(5, csv.getAnswers().get(j).length()).trim();
                             System.out.println(answers);
                             Scanner select = new Scanner(System.in);
-                            int answer = select.nextInt();                          
+                            int answer = select.nextInt();     
+                            
                             answerTest(answer, key);//ob die Antwort richtig war
                             numberOfQuestions--;
                             break;
@@ -170,10 +168,12 @@ public class QuizUi {
     }
 
     private void answerTest(int answer, int key) {
+    	
         int index = 1;
         for (int i = 0; i < csv.getCorrectAnswers().size(); i++) {
             String temp = csv.getCorrectAnswers().get(i).substring(csv.getCorrectAnswers().get(i).length() - 2, csv.getCorrectAnswers().get(i).length()).trim();//right answer
             String temp2 = csv.getCorrectAnswers().get(i).substring(0, csv.getCorrectAnswers().get(i).length() - 1).trim();// id of the question
+         
             if (temp2.equals(String.valueOf(key))) {
                 if (temp.equals(String.valueOf(answer))) {
                     System.out.println("Richtig");
@@ -186,14 +186,15 @@ public class QuizUi {
                 }
             }
         }
+        
         String playerIdData = String.valueOf(getPlayer().getPlayerId());
         indexOfAnswers.add(String.valueOf(index) + " " + playerIdData);
         analyse.setIndexOfAnswers(indexOfAnswers);
-        //new Analyse(index, player.getPlayer_id());
+        //new Analyse(index, player.getPlayerId());
     }
 
     private void analyseStart() {
-        System.out.println("Möchten Sie eine Analyse durchführen?");
+        System.out.println("Moechten Sie eine Analyse durchfuehhren?");
         boolean analyseIndex = false;
         Scanner select = new Scanner(System.in);
         if (select.next().equals("y")) {
@@ -216,6 +217,7 @@ public class QuizUi {
     }
 
     private void compareRightAnswer() {
+    	
         for (int i = 0; i < ids.size(); i++) {
             String id2 = ids.get(i).substring(1, ids.get(i).length());
             String id1 = ids.get(i).substring(0, 1);
@@ -226,6 +228,7 @@ public class QuizUi {
     private void searchId(String id1, String id2) {
         int rightAnswersId1 = 0;
         int rightAnswersId2 = 0;
+        
         for (int i = 0; i < indexOfAnswers.size(); i++) {
            // System.out.println(indexOfAnswers.get(i));
             String playerId = indexOfAnswers.get(i).substring(2, 3);
@@ -259,4 +262,22 @@ public class QuizUi {
                     + " mehrmals eine richtige Antwort gegeben");
         }
     }
+
+    public Database getDataBase() {
+        return database;
+    }
+
+    public void setDatabase(Database database) {
+        this.database = database;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    
 }
