@@ -46,7 +46,7 @@ completed.
   </details>
 
 ### Class diagram ⚠️ :warning: (incomplete)
-![Class diagram](./diagram.PNG)
+![Class diagram](./diagramm.PNG)
 
 ## Technologies
 ***
