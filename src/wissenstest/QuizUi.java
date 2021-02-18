@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-public class UI {
+public class QuizUi {
 
     private Database database;
     boolean gameActive = true;

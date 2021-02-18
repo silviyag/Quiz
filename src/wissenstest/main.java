@@ -4,19 +4,19 @@ package wissenstest;
 public class main {
  
 
- private static UI quizUI;  //UserInterface
+ private static QuizUi quizUi;  //UserInterface
     
     public static void main(String[] args) {
-        quizUI = new UI();
-        quizUI.start();
+        quizUi = new QuizUi();
+        quizUi.start();
     }
     
-    public static UI getUI(){
-        return quizUI;
+    public static QuizUi getUI(){
+        return quizUi;
     }
     
-    public static void setUI(UI UI){
-        quizUI = UI;
+    public static void setUI(QuizUi ui){
+        quizUi = ui;
     }
     
 }
