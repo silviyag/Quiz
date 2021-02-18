@@ -61,7 +61,7 @@ A list of technologies used within the project:
 * [EclipseLink](https://www.eclipse.org/eclipselink/)
 * [Persistence Unit](https://www.objectdb.com/java/jpa/entity/persistence-unit)
 *  [JRE 1.8.2]
-*  [JDK 1.8.2]
+*  [JDK 13.0.2]
 *  [Annotation Example](https://www.baeldung.com/jpa-joincolumn-vs-mappedby)
 
 ## Installation
