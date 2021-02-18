@@ -45,8 +45,9 @@ completed.
 1.3.2 After entering “n” the game ends.
   </details>
 
-### Class diagram ⚠️ :warning: (incomplete)
+### Class diagram and relations⚠️ :warning: (incomplete)
 ![Class diagram](./diagramm.PNG)
+![Relations](./relations.PNG)
 
 ## Technologies
 ***
