@@ -37,11 +37,11 @@ public class Match{
     }
 
     @Getter
-    public int getMatch_id(){
+    public int getMatchId(){
         return matchId;
     }
     @Setter
-    public void setMatch_Id(int matchId){
+    public void setMatchId(int matchId){
         this.matchId = matchId;
     }
 
