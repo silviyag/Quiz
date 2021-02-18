@@ -20,6 +20,8 @@ Can test areas of knowledge (categories).
 
 1. The program is executed. A menu will appear with the following options
 displayed: load a csv file, start the game, perform an analysis. :white_check_mark:
+
+
 ![Starting the game](./menu.PNG)
 
 1.1 If the player wants to load a new file, the csv file is read and a message issued whether the file was successfully read. If the file succeeds
