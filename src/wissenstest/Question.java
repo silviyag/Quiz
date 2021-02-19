@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
 
 @Entity
 public class Question {
@@ -39,71 +37,58 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
-    @Getter
     public int getQuestionId() {
         return questionId;
     }
 
-    @Setter
     public void setQuestion_id(int questionId) {
         this.questionId = questionId;
     }
 
-    @Getter
     public Category getCategory() {
         return this.category;
     }
 
-    @Setter
     public void setCategory(Category category) {
         this.category = category;
     }
 
-    @Getter
     public String getQuestionText() {
         return questionText;
     }
 
-    @Setter
     public void setQuestionText(String text) {
         this.questionText = text;
     }
 
-    @Getter
     public List<Answer> getAnswers() {
         return answers;
     }
 
-    @Setter
     public void setAnswers(List<Answer> answers) {
         this.answers = answers;
     }
 
-    @Getter
     public int getTippedAnswer() {
         return tippedAnswer;    //Number of tipped Answer
     }
 
-    @Setter
     public void setTippedAnswer(int tippedAnswer) {
         this.tippedAnswer = tippedAnswer;    //Number of tipped Answer
     }
 
-    @Getter
     public int getCorrectAnswer() {
         return correctAnswer;    //Number of correct Answer
     }
 
-    @Setter
     public void setCorrectAnswer(int correctAnswer) {
         this.correctAnswer = correctAnswer;    //Number of correct Answer
     }
-    @Setter
+
     void setNumberOfQuestions(int numberOfQuestions) {
         this.questionNumber = numberOfQuestions;
     }
     
-    @Getter
     public int getNumberOfQuestions() {
         return this.questionNumber;
     }

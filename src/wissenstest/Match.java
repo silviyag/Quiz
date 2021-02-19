@@ -12,8 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import static javax.persistence.TemporalType.TIMESTAMP;
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
 
 @Entity
 public class Match{
@@ -36,30 +34,26 @@ public class Match{
         //getting data from Database
     }
 
-    @Getter
     public int getMatchId(){
         return matchId;
     }
-    @Setter
+
     public void setMatchId(int matchId){
         this.matchId = matchId;
     }
 
-    @Getter
     public Player getPlayer(){
         return player;
     }
-    @Setter
+
     public void setPlayer(Player player){
         this.player = player;
     }
     
-    @Getter
     public List<Category> getCategories(){
         return categories;
     }
     
-    @Setter
     public void setCategories(List<Category> categories){
         this.categories = categories;
     }
@@ -81,22 +75,18 @@ public class Match{
         }
     }
     
-    @Getter
     public Date getStartDate(){
         return startDate;
     }
     
-    @Setter
     public void setStartDate(Date startDate){
         this.startDate = startDate;
     }
 	
-    @Getter
     public Date getEndDate(){
         return endDate;
     }
     
-    @Setter
     public void setEndDate(Date endDate){
         this.endDate = endDate;
     }    

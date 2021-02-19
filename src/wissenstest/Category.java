@@ -9,8 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
+
 
 @Entity
 public class Category {
@@ -36,32 +35,27 @@ public class Category {
         this.selected = false;
     }
 
-    @Getter
     public int getCategoryId() {
         return this.categoryId;
     }
 
-    @Setter
+
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
 
-    @Getter
     public Match getMatch() {
         return this.match;
     }
 
-    @Setter
     public void setMatch(Match match) {
         this.match = match;
     }
 
-    @Getter
     public List<Question> getQuestions() {
         return this.questions;
     }
 
-    @Setter
     public void setQuestions(Vector<Question> questions) {
         this.questions = questions;
     }
@@ -83,32 +77,26 @@ public class Category {
         }
     }
 
-    @Getter
     public String getCategoryTitle() {
         return this.categoryTitle;
     }
 
-    @Setter
     public void setCategoryTitle(String categoryTitle) {
     	  this.categoryTitle = categoryTitle;
     }
 
-    @Getter
     public boolean isSelected() { 
         return this.selected;
     }
 
-    @Setter
     public void setSelected(boolean selected) { 
     	this.selected = selected;
     }
     
-    @Getter
     public int getNumberOfCategories() { 
         return this.categoryNumber;
     }
     
-    @Setter
     void setNumberOfCategories(int numberOfCategory) { 
         this.categoryNumber = numberOfCategory; 
     } 

@@ -5,9 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
+import javax.persistence.ManyToOne;;
 
 @Entity
 public class Answer {
@@ -27,30 +25,26 @@ public class Answer {
         this.answerText = answerText;
     }
     
-    @Getter
     public int getAnswerId(){
         return this.answerId;
     }
-    @Setter
+
     public void setAnswerId(int id){
         this.answerId = id;
     }
     
-    @Getter
     public Question getQuestion(){
         return this.question;
     }
-    @Setter
+
     public void setQuestion(Question question){
         this.question = question;
     }
     
-    @Getter
     public String getAnswerText(){
         return answerText;
     }
     
-    @Setter
     public void setAnswerText(String text){
         answerText = text;
     }
